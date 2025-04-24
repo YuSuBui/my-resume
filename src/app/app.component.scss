@@ -80,41 +80,40 @@ $bg-white: #ffffff;
         color: #333;
     }
     
-    .contact-info, .expertise, .education, .skills {
+    .contact-info, .expertise, .education {
         list-style: none;
         padding: 0;
     }
     
-    .contact-info li, .expertise li, .education li , .certifications li, .skills li {
+    .contact-info li, .expertise li, .education li, .certifications li, .skills li {
         margin-bottom: 10px;
         line-height: 1.25;
     }
 }
 
+.project,
 .work-experience {
     border-bottom: 1px solid #ddd;
     padding-bottom: 20px;
     margin-bottom: 20px;
 
-    .job {
-        .company-name {
-            font-size: 18px;
-            font-weight: bold;
-        }
-        
-        .job-period {
-            float: right;
-            color: gray;
-        }
+    .title {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    
+    .job-period {
+        float: right;
+        color: gray;
+    }
 
-        .job-description ul {
-            margin: 10px 0;
-            padding-left: 20px;
-            list-style: disc;
-            
-            li {
-                margin-bottom: 5px;
-            }
+    .job-description ul {
+        margin: 10px 0;
+        padding-left: 20px;
+        list-style: disc;
+        
+        li {
+            margin-bottom: 5px;
         }
     }
 }
