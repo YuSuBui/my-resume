@@ -31,6 +31,7 @@
             ],
             "styles": [
               "src/styles.scss",
+              "src/assets/font-awesome-4.7.0/css/font-awesome.min.css",
               "node_modules/primeicons/primeicons.css",
               "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
               "node_modules/primeng/resources/primeng.min.css",
