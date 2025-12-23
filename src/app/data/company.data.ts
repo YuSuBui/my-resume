@@ -13,7 +13,7 @@ export const PREVIOUS_COMPANY: ICompany[] = [{
 }, {
   name: 'FPT Software HCMC',
   startDate: '2020-07-01T00:00:00.000Z',
-  endDate: '2021-09-01T00:00:00.000Z',
+  endDate: '2020-09-01T00:00:00.000Z',
   position: 'Intern Software Engineer'
 }];
 

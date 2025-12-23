@@ -56,10 +56,10 @@
         <ng-container *ngFor="let item of experience; trackBy: trackByIndex">
           <p-accordionTab iconPos="end" tabStyleClass="sub-section" headerStyleClass="sub-header">
             <ng-template pTemplate="header">
-              <h3><span>{{ item.name }} </span><span>(({{ item.startDate | date:'MMM yyyy':'':'en-US' }} -
+              <h3><span>{{ item.name }} </span><span>({{ item.startDate | date:'MMM yyyy':'':'en-US' }} -
                   {{ item.endDate === 'now'
                   ? 'Present'
-                  : (item.endDate | date:'MMM yyyy':'':'en-US') }}))</span>
+                  : (item.endDate | date:'MMM yyyy':'':'en-US') }})</span>
               </h3>
             </ng-template>
             <ul class="list-style-none">
