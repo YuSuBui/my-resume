@@ -6,9 +6,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build --configuration production --base-href https://yusubui.github.io/my-resume/",
     "watch": "ng build --watch --configuration development",
-    "predeploy": "ng build --configuration production --base-href https://yusubui.github.io/my-resume/",
-    "deploy": "npx angular-cli-ghpages --dir=dist/my-resume",
     "test": "ng test"
   },
   "private": true,
