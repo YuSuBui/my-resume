@@ -21,9 +21,9 @@ jobs:
 
       - run: npm install --force
 
-      - run: npm run build -- --configuration production --base-href /${{ github.event.repository.name }}/
+      - run: npm run build -- --base-href=/${{ github.event.repository.name }}/
 
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist/${{ github.event.repository.name }}/browser
+          publish_dir: dist/my-resume/browser
