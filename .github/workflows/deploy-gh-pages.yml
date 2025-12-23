@@ -21,7 +21,7 @@ jobs:
 
       - run: npm install --force
 
-      - run: npm run build -- --base-href /yusubui/
+      - run: ng build --configuration production --base-href 'https://yusubui.github.io/my-resume/'
 
       - uses: peaceiris/actions-gh-pages@v4
         with:
