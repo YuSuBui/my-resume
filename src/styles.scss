@@ -1,11 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
-@import "primeng/resources/themes/lara-light-blue/theme.css";
-@import "primeng/resources/primeng.css";
-@import "primeflex/themes/primeone-dark.css";
 
 body {
-    font-family: 'Inter', 'Roboto', Arial, sans-serif;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
     margin: 0;
     padding: 0;
-    line-height: 1.5;
+}
+
+:root {
+    --primary-000: #E3F2FD;  /* Lightest */
+    --primary-100: #BBDEFB;
+    --primary-200: #90CAF9;
+    --primary-300: #64B5F6;
+    --primary-400: #42A5F5;
+    --primary-500: #2196F3;  /* Default Primary */
+    --primary-600: #1E88E5;
+    --primary-700: #1976D2;
+    --primary-800: #1565C0;
+    --primary-900: #0D47A1;  /* Darkest */
 }

@@ -1,225 +1,138 @@
-<div class="container">
-    <div class="header">
-        <h1>Sum Bui Cong</h1>
-        <p>Software Engineering</p>
-    </div>
+<header class="bg-primary-900">
+  <h1>{{ header }}</h1>
+  <p>{{ subHeader }}</p>
+</header>
+<main>
+  <p-accordion #tab [multiple]="true" class="w-full" expandIcon="pi pi-plus" collapseIcon="pi pi-minus">
+    <p-accordionTab iconPos="end" tabStyleClass="section contact-section" headerStyleClass="header-section">
+      <ng-template pTemplate="header">
+        <h2><i class="fa fa-address-book"></i> Contact</h2>
+      </ng-template>
+      <ul class="list-style-none">
+        <li (click)="send(user.email)" class="pointer-events-auto cursor-pointer"><i class="fa fa-envelope" aria-hidden="true"></i> {{ user.email }}</li>
+        <li><i class="fa fa-calendar" aria-hidden="true"></i> {{ user.dateOfBirth | date:'dd/MM/yyyy':'':'en-US' }}</li>
+        <li (click)="dial(user.phone)" class="pointer-events-auto cursor-pointer"><i class="fa fa-phone" aria-hidden="true"></i> {{ user.phone }}</li>
+        <li><i class="fa fa-map-marker" aria-hidden="true"></i> {{ user.location.label }}</li>
+        <li *ngIf="user.linkedIn"><i class="fa fa-brands fa-linkedin"></i> <a class="ml-1"
+            href="{{ user.linkedIn.url }}" target="_blank">{{ user.linkedIn.label }}</a></li>
+      </ul>
+    </p-accordionTab>
 
-    <div class="flex columns">
-        <!-- left column -->
-        <div class="column-left">
-            <!-- contact section -->
-            <div class="section">
-                <h2>Contact</h2>
-                <ul class="contact-info">
-                    <li>📞 +84 33 989 0128</li>
-                    <li>📧 buicongsum2001@gmail.com</li>
-                    <li>🌐 <a href="https://www.linkedin.com/in/sumbui/">linkedin.com/in/sumbui</a></li>
-                    <li>🏠 49, Road No. 12, Hiep Binh Phuoc Ward, HCMC</li>
+    <p-accordionTab iconPos="end" tabStyleClass="section skill-section" headerStyleClass="header-section">
+      <ng-template pTemplate="header">
+        <h2><i class="fa fa-cogs"></i> Skills</h2>
+      </ng-template>
+      <ng-container *ngIf="user.skills">
+        <p class="text-justify" *ngFor="let item of user.skills | keyvalue : originalOrder">
+          <strong>{{ item.key }}:</strong> {{ item.value }}
+        </p>
+      </ng-container>
+    </p-accordionTab>
+
+    <p-accordionTab iconPos="end" tabStyleClass="section education-section" headerStyleClass="header-section">
+      <ng-template pTemplate="header">
+        <h2><i class="fa fa-graduation-cap"></i> Education</h2>
+      </ng-template>
+      <p *ngIf="user.education" class="text-justify">{{ user.education }}</p>
+    </p-accordionTab>
+
+    <p-accordionTab iconPos="end" tabStyleClass="section expertise-section" headerStyleClass="header-section">
+      <ng-template pTemplate="header">
+        <h2><i class="fa fa-cog"></i> Expertise</h2>
+      </ng-template>
+      <ul *ngIf="user.expertise" class="list-style-none text-justify">
+        <li *ngFor="let item of user.expertise | keyvalue : originalOrder"><strong>{{ item.key }}:</strong> {{
+          item.value }}
+        </li>
+      </ul>
+    </p-accordionTab>
+
+    <p-accordionTab iconPos="end" tabStyleClass="section work-experience-section" headerStyleClass="header-section">
+      <ng-template pTemplate="header">
+        <h2><i class="fa fa-briefcase" aria-hidden="true"></i> Work Experience</h2>
+      </ng-template>
+
+      <p-accordion #subTabs [multiple]="true" class="w-full" expandIcon="pi pi-plus">
+        <ng-container *ngFor="let item of experience; trackBy: trackByIndex">
+          <p-accordionTab iconPos="end" tabStyleClass="sub-section" headerStyleClass="sub-header">
+            <ng-template pTemplate="header">
+              <h3><span>{{ item.name }} </span><span>(({{ item.startDate | date:'MMM yyyy':'':'en-US' }} -
+                  {{ item.endDate === 'now'
+                  ? 'Present'
+                  : (item.endDate | date:'MMM yyyy':'':'en-US') }}))</span>
+              </h3>
+            </ng-template>
+            <ul class="list-style-none">
+              <li><strong>Domain:</strong> {{ item.domain }}</li>
+              <li><strong>Technologies:</strong> {{ item.technology.join(', ') }}</li>
+              <li><strong>Responsibilities:</strong></li>
+              <ul class="ml-2 text-justify list-style-inside">
+                <li *ngFor="let res of item.responsibility">{{ res }}</li>
+              </ul>
+              <ng-container *ngIf="item.achievement">
+                <li><strong>Achievements:</strong></li>
+                <ul class="ml-2 text-justify list-style-inside">
+                  <li *ngFor="let achieve of item.achievement">{{ achieve }}</li>
                 </ul>
-            </div>
+              </ng-container>
+            </ul>
+          </p-accordionTab>
+        </ng-container>
+      </p-accordion>
+    </p-accordionTab>
 
-            <!-- expertise section -->
-            <div class="section">
-                <h2>Expertise</h2>
-                <ul class="expertise">
-                    <li class="text-justify">A passionate software developer with 3 years of experience in designing and
-                        implementing scalable, high-quality web applications.
-                        Proficient in JavaScript, and TypeScript with expertise in PrimeNG, PrimeFlex, and PrimeIcons frameworks.
-                        Strong background in 3D rendering and graphics development using the Three.js library.
-                        Solid experience in backend development with Java, Spring framework, and C# .NET framework.
-                        Adept at collaborating in cross-functional teams to deliver innovative solutions.
-                    </li>
+    <p-accordionTab iconPos="end" tabStyleClass="section previous-experience-section" headerStyleClass="header-section">
+      <ng-template pTemplate="header">
+        <h2><i class="fa fa-history" aria-hidden="true"></i> Previous Experience</h2>
+      </ng-template>
+      <ul class="list-style-none">
+        <li *ngFor="let item of company"><strong>{{ item.name }} ({{ item.startDate | date:'MMM yyyy':'':'en-US' }} -
+            {{ item.endDate === 'now'
+            ? 'Present'
+            : (item.endDate | date:'MMM yyyy':'':'en-US') }})</strong> - {{ item.position }}</li>
+      </ul>
+    </p-accordionTab>
+
+    <p-accordionTab iconPos="end" tabStyleClass="section portfolio-section" headerStyleClass="header-section">
+      <ng-template pTemplate="header">
+        <h2><i class="fa fa-cogs" aria-hidden="true"></i> Portfolio</h2>
+      </ng-template>
+
+      <p-accordion #subTabs [multiple]="true" class="w-full" expandIcon="pi pi-plus">
+        <ng-container *ngFor="let item of portfolio; trackBy: trackByIndex">
+          <p-accordionTab iconPos="end" tabStyleClass="sub-section" headerStyleClass="sub-header">
+            <ng-template pTemplate="header">
+              <h3>{{ item.name }}</h3>
+            </ng-template>
+            <ul class="list-style-none">
+              <li class="text-justify"><strong>Description:</strong> {{ item.description }}</li>
+              <li class="text-justify"><strong>Technologies Used:</strong></li>
+              <ul *ngFor="let tech of item.technology" class="list-style-inside">
+                <li class="text-justify">{{ tech }}</li>
+              </ul>
+              <ng-container *ngIf="item.highlight">
+                <li class="text-justify"><strong>Highlights::</strong></li>
+                <ul *ngFor="let light of item.highlight" class="list-style-inside">
+                  <li class="text-justify">{{ light }}</li>
                 </ul>
-            </div>
+              </ng-container>
+              <li class="text-justify"><strong>Live Demo: </strong><a href="{{ item.demo.url }}" target="_blank">{{
+                  item.demo.label }}</a></li>
+            </ul>
+          </p-accordionTab>
+        </ng-container>
+      </p-accordion>
+    </p-accordionTab>
 
-            <!-- education section -->
-            <div class="section">
-                <h2>Education</h2>
-                <ul class="education">
-                    <li class="font-italic">Ho Chi Minh City University of Technology<br>
-                        Major: Software Engineering<br>
-                        GPA: 3.2/4.0
-                    </li>
-                </ul>
-            </div>
-
-            <!-- certifications section -->
-            <div class="section">
-                <h2>Certifications</h2>
-                <ul class="certifications">
-                    <li>B1 English level certificate</li>
-                    <li>Level N5 of certificate Japanese-language proficiency</li>
-                </ul>
-            </div>
-
-            <!-- skills section -->
-            <div class="section">
-                <h2>Skills</h2>
-                <ul class="skills">
-                    <li class="text-justify">Programming languages: JavaScript, TypeScript, Java, C/C++/C#, HTML, CSS,
-                        SQL</li>
-                    <li class="text-justify">3D Graphics: WebGL, GLSL</li>
-                    <li class="text-justify">Frameworks: Three.js, Angular, React, Spring, PrimeNg, Primeflex,
-                        PrimeIcons</li>
-                    <li class="text-justify">Development Tools: Visual Studio Code, IntelliJ IDEA, Blender, Git, and
-                        other modern development tools.</li>
-                    <li class="text-justify">Collaboration & Communication: Effective team player with experience in
-                        Agile methodologies.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- right column -->
-        <div class="column-right">
-            <!-- portfolio section -->
-            <div class="section projects">
-                <h2>Portfolio</h2>
-
-                <!-- 1st project -->
-                <div class="project">
-                    <p class="title text-justify">Train3D – Interactive 3D Train Visualization</p>
-                    <p class="description text-justify">Description: Train3D is an interactive web project that
-                        simulates a 3D train model, designed to showcase real-time 3D rendering capabilities in the
-                        browser. It combines modern front-end technologies with Three.js to deliver an engaging and
-                        visually dynamic experience.</p>
-                    <p class="technology text-justify">Technologies Used:</p>
-                    <ul>
-                        <li class="text-justify">Three.js – for 3D rendering, lighting, camera control, and animations
-                        </li>
-                        <li class="text-justify">Angular – for application structure, component lifecycle, and routing
-                        </li>
-                        <li class="text-justify">GLTF Loader – to load and render .gltf/.glb 3D models efficiently</li>
-                        <li class="text-justify">SCSS – for writing modular and maintainable styling with custom design
-                        </li>
-                    </ul>
-                    <p class="hightlight text-justify">Highlights:</p>
-                    <ul>
-                        <li class="text-justify">Renders a realistic 3D train model with interactive camera controls
-                        </li>
-                        <li class="text-justify">Efficient asset management and rendering using GLTF format</li>
-                        <li class="text-justify">Modular Angular architecture for easy maintenance and scalability</li>
-                    </ul>
-                    <p class="live-demo text-justify">Live Demo: <a
-                            href="https://yusubui.github.io/train3D">https://yusubui.github.io/train3D</a></p>
-                </div>
-
-                <!-- 2nd project -->
-                <div class="project">
-                    <p class="title text-justify">Budget Builder – Interactive Monthly Financial Planning Tool</p>
-                    <p class="description text-justify">Description: Budget Builder is a web-based application that allows users to create
-                        and manage monthly budgets with a spreadsheet-like interface. Designed with a focus on user experience and
-                        performance, the tool supports dynamic income and expense tracking across a range of months, with Excel-like
-                        navigation and category grouping.</p>
-                    <p class="technology text-justify">Technologies Used:</p>
-                    <ul>
-                        <li class="text-justify">
-                            Angular 17+ – for building a scalable and modular front-end application
-                        </li>
-                        <li class="text-justify">
-                            TypeScript & RxJS Signals – for reactive state management and performance optimization
-                        </li>
-                        <li class="text-justify">
-                            Tailwind CSS – for responsive, modern UI styling
-                        </li>
-                        <li class="text-justify">
-                            Context Menus & Keyboard Navigation – for fast and accessible data entry
-                        </li>
-                        <li class="text-justify">
-                            Dynamic Structure – for generating columns and categories based on a customizable date range
-                        </li>
-                    </ul>
-                    <p class="hightlight text-justify">Highlights:</p>
-                    <ul>
-                        <li class="text-justify">
-                            Spreadsheet-style UI with support for keyboard shortcuts, tabbing, and real-time input
-                        </li>
-                        <li class="text-justify">
-                            Auto-calculated totals and real-time profit/loss summaries per category
-                        </li>
-                        <li class="text-justify">
-                            Category grouping for better financial organization
-                        </li>
-                        <li class="text-justify">
-                            Context menu support for enhanced UX (e.g. add/remove row, edit group, etc.)
-                        </li>
-                        <li class="text-justify">
-                            Reactive rendering with Angular Signals to minimize unnecessary re-renders
-                        </li>
-                    </ul>
-                    <p class="live-demo text-justify">Live Demo: <a
-                            href="https://yusubui.github.io/budget-builder-example/">https://yusubui.github.io/budget-builder-example/</a></p>
-                </div>
-            </div>
-
-            <!-- work experience section -->
-            <div class="section work-experience">
-                <h2>Work Experience</h2>
-
-                <!-- 1st job -->
-                <div class="job">
-                    <p class="title">FPT Software HCMC<span class="job-period">2021 - now</span></p>
-                    <p class="sub-title">Software Engineering</p>
-                    <div class="job-description">
-                        <ul>
-                            <li class="text-justify">Developed dynamic UI components: Integrated and displayed backend
-                                data in data tables using PrimeNG and RxJS Observables to subscribe and process
-                                real-time data streams, ensuring efficient and seamless updates on the UI.</li>
-                            <li class="text-justify">UI Design Implementation: Translated design mockups from Figma into
-                                responsive UIs that support multiple platforms (mobile, tablet, and desktop) with
-                                consistent quality and usability.</li>
-                            <li class="text-justify">3D Graphics Rendering and Optimization: Applied in-depth domain
-                                knowledge of drilling oil and gas to render accurate 3D graphics in real time on the
-                                scene. Utilized Three.js to update graphics based on real-time data, improving
-                                performance and addressing memory leaks.</li>
-                            <li class="text-justify">Performance Optimization: Designed and implemented solutions to
-                                optimize rendering performance and troubleshoot issues, ensuring smooth and efficient 3D
-                                interactions.</li>
-                            <li class="text-justify">Team Collaboration and Agile Workflow: Participated in daily
-                                stand-up meetings to report progress, identify blockers, and propose solutions.
-                                Conducted sprint demos with client teams to showcase deliverables and gather feedback
-                                effectively.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- 2nd job -->
-                <div class="job">
-                    <p class="title">TMA Solutions<span class="job-period">2020 - 2021</span></p>
-                    <p class="sub-title">Software Engineering</p>
-                    <div class="job-description">
-                        <ul>
-                            <li class="text-justify">Applied strong Java and Spring framework expertise in a hotel
-                                service management project, contributing to both backend functionality and overall
-                                project success.</li>
-                            <li class="text-justify">Collaborated with a cross-functional team to deliver key features,
-                                ensuring seamless integration between frontend and backend systems.</li>
-                            <li class="text-justify">Designed and developed efficient backend services using Spring Boot
-                                and RESTful APIs, focusing on scalability and performance optimization.</li>
-                            <li class="text-justify">Actively participated in team meetings to monitor progress, resolve
-                                technical challenges, and drive continuous improvement in application performance.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- 3rd job -->
-                <div class="job">
-                    <p class="title">FPT Software HCMC<span class="job-period">Jul 2020 - Sep 2020</span></p>
-                    <p class="sub-title">Software Engineering</p>
-                    <div class="job-description">
-                        <ul>
-                            <li class="text-justify">Gained a solid understanding of Object-Oriented Programming (OOP)
-                                principles in Java, enhancing project development capabilities.</li>
-                            <li class="text-justify">Developed and maintained web applications using the Spring
-                                framework, ensuring clean architecture and code reusability.</li>
-                            <li class="text-justify">Worked closely with a team to achieve project goals, regularly
-                                reporting progress and challenges to a trainer for guidance.</li>
-                            <li class="text-justify">Built a fully functional web application from scratch, applying
-                                knowledge of Spring Boot, MVC architecture, and RESTful APIs to deliver scalable
-                                solutions.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+    <p-accordionTab iconPos="end" tabStyleClass="section certificate-section" headerStyleClass="header-section">
+      <ng-template pTemplate="header">
+        <h2><i class="fa fa-certificate" aria-hidden="true"></i> Certifications</h2>
+      </ng-template>
+      <ng-container *ngIf="user.certs">
+        <p *ngFor="let cert of user.certs">{{ cert }}</p>
+      </ng-container>
+    </p-accordionTab>
+  </p-accordion>
+  <small class="text-xs text-right font-italic" style="float: right;">Last updated: {{ user.updatedAt | date:
+    'dd/MM/yyy':'':'en-US' }}</small>
+</main>
