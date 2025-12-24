@@ -5,34 +5,55 @@ export const USER: IUser = {
   firstname: 'Sum',
   lastname: 'Bui Cong',
   position: 'Software Engineer',
-  email: ' buicongsum2001@gmail.com',
+  email: 'buicongsum2001@gmail.com',
   phone: '(+84) 33 989 0128',
   dateOfBirth: '1998-01-20T00:00:00.000Z',
   location: {
-    label: 'HCMC, Vietnam',
+    label: 'Ho Chi Minh City, Vietnam',
     url: 'https://maps.app.goo.gl/psv8qHKK6N7deCG27'
   },
   linkedIn: {
-    label: 'linkedin.com/in/sumbui/',
+    label: 'linkedin.com/in/sumbui',
     url: 'https://www.linkedin.com/in/sumbui/'
   },
-  certs: ['B1 English Level Certificate', 'Level N5 of Certificate Japanese-Language Proficiency'],
-  education: 'HCMC University of Technology - Software Engineering (2016 - 2020) - GPA: 3.2/4.0',
+  certs: [
+    'B1 English Certificate',
+    'Japanese-Language Proficiency Test (JLPT) N5'
+  ],
+  education:
+    'Ho Chi Minh City University of Technology – Software Engineering (2016 – 2020), GPA: 3.2/4.0',
   createdAt: '2025-12-24T00:00:00.000Z',
   updatedAt: '2025-12-24T00:00:00.000Z',
   skills: {
-    'Programming languages': 'C/C++/C#, Java, JavaScript/TypeScript, HTML/CSS/Bootstrap, SQL, GraphQL, Websocket, etc.',
-    '3D graphics': 'WebGL, GLSL.',
-    'Frameworks & Libraries': 'Angular, React.js, Next.js, Three.js, Spring Boot, Spring Security, .NET, RxJS, TailwindCSS, Shacdn, PrimeNG, PrimeFlex, PrimeIcons, etc.',
-    'Tools': 'VS Code, IntelliJ, Eclipse, Git, SVN, etc.'
+    'Programming Languages':
+      'JavaScript, TypeScript, Java, C#, C/C++, SQL',
+    'Frontend & UI':
+      'HTML5, CSS3, Bootstrap, Tailwind CSS',
+    'Frameworks & Libraries':
+      'Angular, React.js, Next.js, Three.js, RxJS, PrimeNG, PrimeFlex, PrimeIcons, Shadcn UI, Spring Boot, Spring Security, .NET',
+    'API & Real-time Communication':
+      'GraphQL (Queries, Mutations, Subscriptions), RESTful APIs, WebSocket',
+    '3D Graphics & Visualization':
+      'Three.js, WebGL, GLSL, 3D Transformations, Geometry & Material Optimization',
+    'Testing':
+      'Karma, Jasmine',
+    'Tools & IDEs':
+      'VS Code, IntelliJ IDEA, Eclipse, Git, SVN'
   },
   expertise: {
-    'Web Development': 'Proficient in Angular, JavaScript, TypeScript, and RxJS for building dynamic and scalable web applications. Strong experience with PrimeNG, PrimeFlex, and Tailwind CSS for responsive UI design.',
-    '3D Rendering & Visualization': 'Expert in Three.js for 3D modeling and rendering, with hands-on experience in GraphQL, WebSocket, and real-time data visualization in industries such as oil & gas (3D BHA simulations and drilling operations).',
-    'Back-End Development': 'Solid knowledge of Java, Spring Boot, C# .NET, and GraphQL APIs, with expertise in JPA/Hibernate for efficient data handling and integration.',
-    'UI/UX Design': 'Skilled in creating responsive, user-centric UI/UX with Angular and Blender for 3D modeling and scene visualization.',
-    'Performance Optimization': 'Extensive experience optimizing memory performance, reducing rendering times, and resolving memory leaks in 3D applications.',
-    'Testing & Quality Assurance': 'Proficient in writing unit and integration tests using Karma, Jasmine, and JUnit to ensure code stability and high performance.',
-    'Agile Methodology': 'Strong participation in Agile teams, contributing to daily stand-ups, sprint planning, task management, and client demos.'
+    'Frontend Engineering':
+      'Strong expertise in Angular, TypeScript, RxJS, and modern frontend architectures for building scalable, high-performance web applications. Experienced in PrimeNG, PrimeFlex, and Tailwind CSS for responsive and maintainable UI systems.',
+    '3D Rendering & Real-time Visualization':
+      'Advanced experience with Three.js for real-time 3D rendering, including camera control, object lifecycle management, and memory optimization. Delivered high-fidelity 3D visualization systems for oil & gas drilling operations using live sensor data.',
+    'Real-time Data & API Integration':
+      'Hands-on experience designing and consuming GraphQL APIs (including subscriptions) and WebSocket-based communication to achieve low-latency (<1000ms) real-time data synchronization.',
+    'Backend & System Integration':
+      'Solid backend knowledge with Java (Spring Boot, Spring Security), C# .NET, and GraphQL-based data layers. Experienced in JPA/Hibernate for efficient persistence and system integration.',
+    'Performance Optimization':
+      'Proven ability to identify and resolve performance bottlenecks, reduce memory usage, and eliminate memory leaks in complex 3D and data-intensive applications.',
+    'Testing & Code Quality':
+      'Strong focus on code quality with unit and integration testing using Karma, Jasmine, and JUnit, ensuring system stability and long-term maintainability.',
+    'Agile & Collaboration':
+      'Active contributor in Agile/Scrum teams, participating in sprint planning, daily stand-ups, backlog refinement, and client demos. Comfortable collaborating with cross-functional teams and stakeholders.'
   }
-}
+};

@@ -61,6 +61,29 @@ export const WORKING_EXPERIENCE: IWorkingExperience[] = [{
     'Successfully integrated intuitive 2D markups that improved clarity of component metadata and supported better user decision-making.'
   ]
 }, {
+  name: 'Birding Game',
+  startDate: '2025-07-01',
+  endDate: '2025-09-01',
+  domain: 'Interactive 3D Game / Virtual Tour / Gamification',
+  technology: ['Next.js', 'Three.js', 'Matterport SDK', 'Tailwind CSS', 'Supabase', 'HTML', 'CSS'],
+  responsibility: [
+    'Designed and developed an interactive 3D birding game experience using Next.js and Three.js, focusing on smooth navigation and immersive gameplay.',
+    'Integrated Matterport SDK to leverage 3D spaces and camera data, enabling seamless interaction between Matterport scenes and custom Three.js rendering.',
+    'Implemented real-time game logic, scoring, and user progress tracking using Supabase (authentication, database, and storage).',
+    'Built responsive and modern UI using Tailwind CSS, ensuring consistent UX across desktop and tablet devices.',
+    'Managed 3D assets, camera controls, animations, and object interactions within complex virtual environments.',
+    'Optimized rendering performance and loading times for 3D scenes, ensuring stable FPS during gameplay.',
+    'Collaborated closely with designers and stakeholders to refine gameplay mechanics, visual effects, and user flow.',
+    'Applied clean architecture and modular design patterns to separate game logic, rendering logic, and UI components.',
+  ],
+  achievement: [
+    'Successfully delivered an engaging 3D birding game that combined Matterport environments with custom Three.js interactions.',
+    'Achieved smooth real-time interaction and camera transitions within Matterport spaces, enhancing immersion and user experience.',
+    'Reduced initial scene loading time by optimizing asset loading and lazy-rendering strategies.',
+    'Implemented a scalable backend using Supabase, enabling user authentication, score persistence, and future feature expansion.',
+    'Received positive feedback for intuitive controls, visually appealing 3D interactions, and overall gameplay experience.'
+  ]
+},{
   name: 'Angular Business Dashboard – Internal Management Tool',
   startDate: '2021-09-01',
   endDate: '2021-12-30',
