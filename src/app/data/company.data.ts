@@ -18,9 +18,78 @@ export const PREVIOUS_COMPANY: ICompany[] = [{
 }];
 
 export const WORKING_EXPERIENCE: IWorkingExperience[] = [{
+  name: 'FPT Software Corporate Landing Page',
+  startDate: '2023-02-01',
+  endDate: 'now',
+  domain: 'Corporate Website / IT Services Marketing',
+  technology: [
+    'HTML5',
+    'CSS3',
+    'SCSS',
+    'JavaScript',
+    'jQuery',
+    'Gulp',
+    'Responsive Design',
+    'Webpack',
+    'SEO Optimization'
+  ],
+  responsibility: [
+    'Analyzed UI/UX requirements and implemented responsive landing page layouts using HTML5, CSS3, and SCSS.',
+    'Developed interactive UI components and animations using JavaScript and jQuery to enhance user engagement.',
+    'Optimized front-end assets using Gulp for automated build processes including minification, bundling, and live reload.',
+    'Implemented responsive design to ensure cross-browser compatibility and optimal performance across desktop, tablet, and mobile devices.',
+    'Collaborated with designers to translate Figma/UI designs into pixel-perfect web interfaces.',
+    'Improved website performance through image optimization, lazy loading, and CSS/JS bundling.',
+    'Ensured SEO-friendly structure by implementing semantic HTML and performance best practices.',
+    'Participated in testing and bug fixing to ensure stable UI rendering across multiple browsers.'
+  ],
+  achievement: [
+    'Successfully delivered a high-performance corporate landing page for showcasing company services, industry solutions, and success stories.',
+    'Improved page loading speed and front-end performance through asset optimization and Gulp-based build automation.',
+    'Enhanced user experience with smooth UI interactions and responsive layouts across multiple devices.',
+    'Delivered pixel-perfect UI implementation aligned with design specifications and corporate branding guidelines.',
+    'Contributed to improving website accessibility and SEO readiness through semantic HTML structure.'
+  ]
+}, {
+  name: 'Fast-Food Chain Management CMS',
+  startDate: '2025-01-01',
+  endDate: '2025-02-28',
+  domain: 'Food & Beverage Management System',
+  technology: [
+    'Angular 21',
+    'TypeScript',
+    'Ng Zorro',
+    'RxJS',
+    'REST API',
+    'HTML',
+    'SCSS',
+    'Jasmine',
+    'Karma',
+    'Design Patterns',
+    'OOP'
+  ],
+  responsibility: [
+    'Analyzed business requirements for fast-food chain management and designed scalable CMS modules using Angular 21 and Ng Zorro UI components.',
+    'Developed reusable and extensible data table architecture using OOP principles and design patterns such as Strategy, Factory, and Observer.',
+    'Implemented core management modules including User Management, Store Management, Menu Management, and Role-based Access Control.',
+    'Built dynamic data table components supporting sorting, filtering, pagination, column configuration, and reusable CRUD workflows.',
+    'Designed modular Angular services and state management using RxJS to ensure reactive and maintainable data flows.',
+    'Collaborated with backend teams to integrate REST APIs for managing store information, menu items, pricing, and user roles.',
+    'Applied clean architecture and component-based design to improve maintainability, scalability, and code reuse across CMS modules.',
+    'Developed unit tests for Angular services and core components using Karma and Jasmine.',
+    'Participated in Agile development cycles including sprint planning, code reviews, and feature demonstrations.'
+  ],
+  achievement: [
+    'Successfully delivered a scalable CMS platform for managing multiple fast-food branches with centralized administration.',
+    'Improved development efficiency by creating reusable table and form frameworks that reduced feature implementation time by over 40%.',
+    'Enhanced system usability through standardized CRUD workflows and intuitive Ng Zorro-based UI design.',
+    'Implemented modular architecture with design patterns, significantly improving maintainability and extensibility of the CMS system.',
+    'Enabled efficient management of users, stores, and menu catalogs across multiple branches through a centralized web platform.'
+  ]
+}, {
   name: '3D Drilling Operation Visualization System',
   startDate: '2022-01-01',
-  endDate: 'now',
+  endDate: '2025-12-31',
   domain: 'Oil and Gas Industry',
   technology: ['Angular', 'Three.js', 'GraphQL', 'WebSocket', 'PrimeNG', 'HTML', 'CSS', 'Karma', 'Jasmine', 'etc'],
   responsibility: [
@@ -83,7 +152,7 @@ export const WORKING_EXPERIENCE: IWorkingExperience[] = [{
     'Implemented a scalable backend using Supabase, enabling user authentication, score persistence, and future feature expansion.',
     'Received positive feedback for intuitive controls, visually appealing 3D interactions, and overall gameplay experience.'
   ]
-},{
+}, {
   name: 'Angular Business Dashboard – Internal Management Tool',
   startDate: '2021-09-01',
   endDate: '2021-12-30',
