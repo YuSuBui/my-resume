@@ -23,14 +23,16 @@ export const USER: IUser = {
   education:
     'Ho Chi Minh City University of Technology – Software Engineering (2016 – 2020), GPA: 3.2/4.0',
   createdAt: '2025-12-24T00:00:00.000Z',
-  updatedAt: '2025-12-24T00:00:00.000Z',
+  updatedAt: '2026-03-20T00:00:00.000Z',
   skills: {
     'Programming Languages':
       'JavaScript, TypeScript, Java, C#, C/C++, SQL',
     'Frontend & UI':
-      'HTML5, CSS3, Bootstrap, Tailwind CSS',
+      'HTML5, CSS3, SCSS, Responsive Design, Bootstrap, Tailwind CSS, PrimeNG, Ng Zorro, PrimeFlex, PrimeIcons, Shadcn UI',
     'Frameworks & Libraries':
-      'Angular, React.js, Next.js, Three.js, RxJS, PrimeNG, PrimeFlex, PrimeIcons, Shadcn UI, Spring Boot, Spring Security, .NET',
+      'Angular (5+ years in scalable enterprise applications), React.js (2+ years), Next.js (1+ year), Three.js, RxJS, Spring Boot, Spring Security, .NET',
+    'UI Libraries & Design Systems':
+      'PrimeNG, Ng Zorro, Tailwind CSS, Bootstrap, Shadcn UI, reusable component patterns, design system consistency',
     'API & Real-time Communication':
       'GraphQL (Queries, Mutations, Subscriptions), RESTful APIs, WebSocket',
     '3D Graphics & Visualization':
@@ -42,7 +44,9 @@ export const USER: IUser = {
   },
   expertise: {
     'Frontend Engineering':
-      'Strong expertise in Angular, TypeScript, RxJS, and modern frontend architectures for building scalable, high-performance web applications. Experienced in PrimeNG, PrimeFlex, and Tailwind CSS for responsive and maintainable UI systems.',
+      'Strong expertise in Angular, React.js, Next.js, TypeScript, and RxJS for building scalable, high-performance web applications. Experienced with component-driven architecture, state management, routing, and reusable frontend modules in enterprise environments.',
+    'UI Libraries & Design Systems':
+      'Hands-on experience with PrimeNG, Ng Zorro, Tailwind CSS, Bootstrap, PrimeFlex, and Shadcn UI to build consistent, responsive, and maintainable user interfaces. Skilled in transforming design requirements into reusable UI components and standardized design patterns.',
     '3D Rendering & Real-time Visualization':
       'Advanced experience with Three.js for real-time 3D rendering, including camera control, object lifecycle management, and memory optimization. Delivered high-fidelity 3D visualization systems for oil & gas drilling operations using live sensor data.',
     'Real-time Data & API Integration':

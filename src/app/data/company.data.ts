@@ -19,7 +19,7 @@ export const PREVIOUS_COMPANY: ICompany[] = [{
 
 export const WORKING_EXPERIENCE: IWorkingExperience[] = [{
   name: 'FPT Software Corporate Landing Page',
-  startDate: '2023-02-01',
+  startDate: '2026-02-01',
   endDate: 'now',
   domain: 'Corporate Website / IT Services Marketing',
   technology: [
@@ -52,8 +52,8 @@ export const WORKING_EXPERIENCE: IWorkingExperience[] = [{
   ]
 }, {
   name: 'Fast-Food Chain Management CMS',
-  startDate: '2025-01-01',
-  endDate: '2025-02-28',
+  startDate: '2025-12-01',
+  endDate: '2026-02-28',
   domain: 'Food & Beverage Management System',
   technology: [
     'Angular 21',
