@@ -483,21 +483,70 @@
   }
 
   /* -------------------------------------------------------------------------- */
-  /* Download / print                                                           */
+  /* Download PDF (immediate file download via html2pdf.js CDN)                 */
   /* -------------------------------------------------------------------------- */
 
   function setupDownload() {
     const button = document.getElementById("download-pdf");
     if (!button) return;
 
-    button.addEventListener("click", () => {
-      const previousTitle = document.title;
-      document.title = data.meta.pdfFilename || previousTitle;
-      window.print();
-      /* Restore title after print dialog closes (best-effort) */
-      setTimeout(() => {
-        document.title = previousTitle;
-      }, 500);
+    button.addEventListener("click", async () => {
+      const element = document.getElementById("resume");
+      if (!element) return;
+
+      if (typeof window.html2pdf !== "function") {
+        console.error("html2pdf.js is not loaded.");
+        return;
+      }
+
+      const filename = `${data.meta.pdfFilename || "resume"}.pdf`;
+      const previousLabel = button.querySelector(".download-fab__label");
+      const originalText = previousLabel ? previousLabel.textContent : "";
+
+      button.disabled = true;
+      button.setAttribute("aria-busy", "true");
+      if (previousLabel) previousLabel.textContent = "Preparing…";
+      element.classList.add("is-exporting");
+
+      const options = {
+        /* Page padding already provides ~12mm; keep html2pdf margin at 0 */
+        margin: 0,
+        filename,
+        image: { type: "jpeg", quality: 0.98 },
+        html2canvas: {
+          scale: 2,
+          useCORS: true,
+          logging: false,
+          backgroundColor: "#ffffff",
+          scrollX: 0,
+          scrollY: 0,
+        },
+        jsPDF: {
+          unit: "mm",
+          format: "a4",
+          orientation: "portrait",
+          compress: true,
+        },
+        pagebreak: {
+          mode: ["css", "legacy"],
+          avoid: [".entry", ".project", ".skills-block", ".resume-header"],
+        },
+      };
+
+      try {
+        await window
+          .html2pdf()
+          .set(options)
+          .from(element)
+          .save();
+      } catch (err) {
+        console.error("PDF export failed:", err);
+      } finally {
+        element.classList.remove("is-exporting");
+        button.disabled = false;
+        button.removeAttribute("aria-busy");
+        if (previousLabel) previousLabel.textContent = originalText || "Download PDF";
+      }
     });
   }
 
