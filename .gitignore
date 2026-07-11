@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Local originals / unused assets (not for production)
+assets/avatar-original.png
+assets/avatar.png
+
+# CI publish staging (generated in Actions)
+_site/
+
+# Editor / OS
+Thumbs.db
+*.swp
+.idea/
+.vscode/
