@@ -50,7 +50,7 @@ window.RESUME_DATA = {
     items: [
       {
         company: "FPT Software",
-        role: "Software Developer",
+        role: "Software Engineer",
         location: "Ho Chi Minh City, Vietnam",
         start: "Sep 2021",
         end: "Present",
