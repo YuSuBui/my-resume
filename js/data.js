@@ -12,7 +12,7 @@ window.RESUME_DATA = {
     /** Production site origin (no trailing slash). Update if deploy URL changes. */
     siteUrl: "https://yusubui.github.io/my-resume",
     description:
-      "Resume of Sum Bui, Senior Frontend Engineer specializing in React, TypeScript, Three.js, and WebGL 3D web visualization for interactive simulation and digital twin-style applications.",
+      "Resume of Sum Bui, Senior Frontend Engineer specializing in Angular, React, TypeScript, Three.js, and WebGL 3D web visualization for interactive simulation and digital twin-style applications.",
     keywords: [
       "Sum Bui",
       "Frontend Engineer",
